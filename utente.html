@@ -1,0 +1,25 @@
+<!-- utente.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Utente</title>
+</head>
+<body>
+    <h1>Pagina Utente</h1>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // Funzione per gestire la ricerca ricevuta dalla pagina admin
+        socket.on('videoUtente', (youtubeURL) => {
+            console.log(`Ricevuta ricerca da admin: ${youtubeURL}`);
+            
+            // Reindirizza automaticamente alla pagina di ricerca YouTube
+            window.location.href = youtubeURL;
+        });
+    </script>
+</body>
+</html>
