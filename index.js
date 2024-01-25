@@ -14,7 +14,7 @@ app.get('/admin', (req, res) => {
     res.sendFile(__dirname + '/admin.html');
 });
 
-app.get('/', (req, res) => {
+app.get('/utente', (req, res) => {
     res.sendFile(__dirname + '/utente.html');
 });
 
