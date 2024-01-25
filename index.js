@@ -5,7 +5,7 @@ const socketIO = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIO(server);
+const io = socketIO(server, {transports: ['websocket']});
 const axios = require('axios');
 const cheerio = require('cheerio');
 
