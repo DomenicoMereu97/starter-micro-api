@@ -34,7 +34,7 @@ io.on('connection', (socket) => {
                     q: testoRicerca,
                     part: 'snippet',
                     type: 'video',
-                    key: 'AIzaSyDNFR9M9oEuingIZWQpWF6X6WuqCAM1iRI', // Sostituisci con la tua chiave API di YouTube
+                    key: APIKEY, // Sostituisci con la tua chiave API di YouTube
                     maxResults: 1,
                 },
             });
