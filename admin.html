@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Admin</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        button {
+            font-size: 20px; /* Imposta la dimensione del testo del pulsante */
+            padding: 10px 20px; /* Aggiunge spazio intorno al testo del pulsante */
+            margin-top: 10px; /* Aggiunge spazio sopra il pulsante */
+            background-color: #007BFF; /* Colore di sfondo */
+            color: #fff; /* Colore del testo */
+            border: none; /* Rimuove il bordo */
+            cursor: pointer;
+            border-radius: 5px; /* Bordo arrotondato */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Cambia il colore di sfondo al passaggio del mouse */
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Pagina Admin</h1>
+    <label for="ricercaInput">Inserisci testo di ricerca per YouTube:</label>
+    <input type="text" id="ricercaInput" />
+    <button onclick="effettuaRicercaAdmin()">Effettua Ricerca</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // Funzione per inviare la ricerca dalla pagina admin
+        function effettuaRicercaAdmin() {
+            const testoRicerca = document.getElementById('ricercaInput').value;
+            socket.emit('ricercaAdmin', testoRicerca);
+            window.location.href = "https://www.google.com/search?q=quante+canzoni+esistono+nel+mondo";
+        }
+    </script>
+</body>
+</html>
+
